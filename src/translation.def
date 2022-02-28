@@ -1,0 +1,57 @@
+
+
+// Menu bar
+ENCODE(Home)
+ENCODE(Settings)
+ENCODE(Info)
+ENCODE(Exit)
+
+// UI
+ENCODE(UI)
+ENCODE(Theme)
+ENCODE(Focus)
+ENCODE_EX(Within_Window, Within Window)
+ENCODE(Locked)
+ENCODE(Unlocked)
+ENCODE(ON)
+ENCODE(OFF)
+ENCODE_EX(Lock_Focus, Lock Focus)
+ENCODE_EX(Lock_Check, Lock Check)
+ENCODE_EX(Lock_Timeout, Lock Timeout)
+ENCODE(Language)
+ENCODE_EX(Export_language, Export language)
+ENCODE_EX(Current_language_has_been_export_to, Current language has been export to)
+ENCODE(Dark)
+ENCODE(Light)
+ENCODE(Classic)
+
+// Display
+ENCODE(Display)
+
+// System
+ENCODE(System)
+ENCODE(OS)
+ENCODE_EX(CPU_count, CPU count)
+ENCODE_EX(System_Memory_Total, System Memory Total)
+
+// Misc
+ENCODE(About)
+ENCODE(Author)
+ENCODE(Version)
+ENCODE(License)
+ENCODE_EX(Third_Party, Third-Party)
+ENCODE(Library)
+ENCODE(Default)
+ENCODE(Supported)
+ENCODE(OK)
+ENCODE(Active)
+ENCODE(Available)
+ENCODE(Driver)
+ENCODE(Drivers)
+ENCODE(Input)
+ENCODE(Inputs)
+ENCODE(Location)
+ENCODE(Reset)
+ENCODE(Preview)
+
+

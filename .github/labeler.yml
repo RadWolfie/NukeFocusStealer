@@ -1,0 +1,7 @@
+# The rest is base on folder and file's naming
+TRANSLATION:
+  - langs/*.ini
+
+# Misc
+CMAKE:
+  - '**/CMakeLists.txt'

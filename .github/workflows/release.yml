@@ -1,0 +1,35 @@
+name: Schedule Release
+
+on:
+  workflow_dispatch:
+  push:
+    paths-ignore:
+      - '.github/*'
+      - '.github/*TEMPLATE/**'
+    tags:
+      - 'v*'
+
+jobs:
+  build:
+    name: GitHub CI
+    uses: ./.github/workflows/ci.yml
+  release:
+    name: Generate Release
+    needs: [build]
+    if: needs.build.outputs.do-release == 'true'
+    runs-on: ubuntu-latest
+    env:
+      tag_name: ${{ needs.build.outputs.ver-cur }}
+    steps:
+      - uses: actions/checkout@v3
+      - name: Get Artifacts
+        uses: actions/download-artifact@v3
+        # NOTE: We're downloading ALL artifacts.
+      - name: Prepare artifacts for release
+        run: | # download-artifact doesn't download a zip, so rezip it
+          7z a -mx1 "NukeFocusStealer.zip" "./NukeFocusStealer/*"
+      - name: Create Release
+        env:
+          GH_REPO: ${{ github.repository }} # https://github.com/cli/cli/issues/3556
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: gh release create ${{ env.tag_name }} NukeFocusStealer.zip --notes-file changelog/changelog --target $GITHUB_SHA

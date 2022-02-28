@@ -1,0 +1,12 @@
+[submodule "import/SDL2"]
+	path = import/SDL2
+	url = https://github.com/libsdl-org/SDL.git
+	shallow = true
+[submodule "import/imgui"]
+	path = import/imgui
+	url = https://github.com/ocornut/imgui.git
+	shallow = true
+[submodule "import/simpleini"]
+	path = import/simpleini
+	url = https://github.com/brofield/simpleini.git
+	shallow = true
